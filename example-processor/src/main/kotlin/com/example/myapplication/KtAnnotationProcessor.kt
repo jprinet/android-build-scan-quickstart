@@ -11,9 +11,9 @@ import javax.tools.Diagnostic
 @SupportedAnnotationTypes("example.Interesting")
 class KtAnnotationProcessor : AbstractProcessor() {
     override fun process(annotations: MutableSet<out TypeElement>, roundEnv: RoundEnvironment): Boolean {
-        roundEnv.getElementsAnnotatedWith(Interesting::class.java).forEach {
-            processingEnv.messager.printMessage(Diagnostic.Kind.WARNING, "${it.simpleName} is interesting.")
-        }
+//        roundEnv.getElementsAnnotatedWith(Interesting::class.java).forEach {
+//            processingEnv.messager.printMessage(Diagnostic.Kind.WARNING, "${it.simpleName} is interesting.")
+//        }
         return true
     }
 }

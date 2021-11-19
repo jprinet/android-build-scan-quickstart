@@ -1,9 +1,14 @@
 plugins {
-    kotlin("jvm")
+    //kotlin("jvm")
+    kotlin("multiplatform")
+}
+
+kotlin {
+    jvm()
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    //implementation(kotlin("stdlib"))
 }
 
 repositories {

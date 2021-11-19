@@ -5,6 +5,8 @@ plugins {
   id ("com.osacky.fladle")
 }
 
+apply(plugin = "com.google.firebase.crashlytics")
+
 android {
   compileSdkVersion(30)
 

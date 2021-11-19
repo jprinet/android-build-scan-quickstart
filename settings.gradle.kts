@@ -1,6 +1,7 @@
 pluginManagement {
     repositories {
         mavenLocal()
+        gradlePluginPortal()
     }
 }
 plugins {
@@ -8,7 +9,7 @@ plugins {
 }
 
 rootProject.name = "My Application"
-include ("example-app", "example-annotation", "example-processor")
+include ("example-app", "example-annotation", "example-processor", "example-library")
 
 gradleEnterprise {
     server = "http://localhost:5086"
