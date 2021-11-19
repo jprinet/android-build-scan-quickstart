@@ -2,11 +2,11 @@ plugins {
   id ("com.android.application")
   id ("kotlin-android")
   kotlin("kapt")
+  id ("com.osacky.fladle")
 }
 
 android {
   compileSdkVersion(30)
-  //buildToolsVersion("30.0.0")
 
   defaultConfig {
     applicationId = "com.example.com.example.myapplication"
@@ -25,8 +25,8 @@ android {
     }
   }
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
   }
   kotlinOptions {
     val options = this as org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
