@@ -35,9 +35,15 @@ plugins {
     id("org.gradle.android.cache-fix") version "2.4.4" apply false
     id( "com.google.osdetector") version "1.7.0"
     id("io.github.cdsap.talaiot.plugin.influxdb") version "1.5.1"
+    id("ru.vyarus.animalsniffer") version "1.5.3"
+
 }
 
 subprojects {
+    tasks.withType<ru.vyarus.gradle.plugin.animalsniffer.AnimalSniffer>().configureEach {
+        getReports().getText().getRequired().set(true)
+    }
+
     plugins.withType<com.android.build.gradle.api.AndroidBasePlugin>() {
         apply(plugin = "io.michaelrocks.paranoid")
         apply(plugin = "com.trevjonez.composer")
