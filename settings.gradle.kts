@@ -27,8 +27,14 @@ gradleEnterprise {
 
         buildCache {
             local {
+                isEnabled = false
                 directory = File(rootDir, "build-cache")
                 removeUnusedEntriesAfterDays = 30
+            }
+            remote {
+                isEnabled = true
+                isPush = true
+                isUploadInBackground = true
             }
         }
     }
