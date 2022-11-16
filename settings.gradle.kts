@@ -6,15 +6,14 @@ pluginManagement {
     }
 }
 plugins {
-    id ("com.gradle.enterprise") version "3.11.2"
+    id ("com.gradle.enterprise") version "3.11.4"
 }
 
 rootProject.name = "My Application"
 include ("example-app", "example-annotation", "example-processor")
 
 gradleEnterprise {
-    //server = "http://localhost:5086"
-    server = "https://ge.solutions-team.gradle.com"
+    server = "http://localhost:5086"
 
     buildScan {
         publishAlways()
@@ -25,17 +24,18 @@ gradleEnterprise {
             isTaskInputFiles = true
         }
 
-        buildCache {
-            local {
-                isEnabled = false
-                directory = File(rootDir, "build-cache")
-                removeUnusedEntriesAfterDays = 30
-            }
-            remote {
-                isEnabled = true
-                isPush = true
-                isUploadInBackground = true
-            }
-        }
+    }
+}
+
+buildCache {
+    local {
+        isEnabled = true
+        directory = File(rootDir, "build-cache")
+        removeUnusedEntriesAfterDays = 30
+    }
+
+    remote(gradleEnterprise.buildCache) {
+        isEnabled = false
+        isPush = true
     }
 }

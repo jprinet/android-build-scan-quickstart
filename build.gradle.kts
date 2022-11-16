@@ -10,7 +10,7 @@ buildscript {
     classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20")
     classpath("com.osacky.flank.gradle:fladle:0.17.2")
     classpath("org.jlleitschuh.gradle:ktlint-gradle:10.0.0")
-    classpath("io.realm:realm-gradle-plugin:10.9.1-SNAPSHOT")
+    classpath("io.realm:realm-gradle-plugin:10.12.0")
   }
 }
 
