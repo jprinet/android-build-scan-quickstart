@@ -1,17 +1,20 @@
 pluginManagement {
     repositories {
         mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
     }
 }
 plugins {
-    id ("com.gradle.enterprise") version "3.8-branch-master-prerelease"
+    id ("com.gradle.enterprise") version "3.11.2"
 }
 
 rootProject.name = "My Application"
 include ("example-app", "example-annotation", "example-processor")
 
 gradleEnterprise {
-    server = "http://localhost:5086"
+    //server = "http://localhost:5086"
+    server = "https://ge.solutions-team.gradle.com"
 
     buildScan {
         publishAlways()
